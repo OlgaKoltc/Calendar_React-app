@@ -1,11 +1,13 @@
 import React from "react";
 import moment from "moment";
-import Day from "./Day";
+import Day from "../Day/Day";
+import styled from "styled-components";
 
-const Wrapper = styled.section`
+const GridWrapper = styled.section`
   display: grid;
-
-  background: papayawhip;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-row: repeat(24, 1fr);
+  background: "rgb(242, 236, 236)";
 `;
 
 export default function Week() {
@@ -21,6 +23,14 @@ export default function Week() {
     day.add(1, "day");
   }
 
-  console.log(fullWeek);
-  return <Day />;
+  return (
+    <GridWrapper>
+      {fullWeek.map((_, index) => (
+        <div>
+          <Day />
+          {index}
+        </div>
+      ))}
+    </GridWrapper>
+  );
 }

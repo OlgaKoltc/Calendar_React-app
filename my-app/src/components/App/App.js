@@ -1,23 +1,23 @@
 import './App.css';
 import styled from 'styled-components';
-import Month from './components/Month'
+import Week from '../Week/Week';
 
 
 const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
+  font-size: 1em;
+  text-align: start;
   color: palevioletred;
 `;
 const Wrapper = styled.section`
-  padding: 4em;
+  padding: 2em;
   background: papayawhip;
 `;
 
 function App() {
   return (
     <Wrapper>
-      <Title>interview-calendar</Title>
-      <Month />
+      <Title>Interview Calendar</Title>
+      <Week />
     </Wrapper>
   );
 }
