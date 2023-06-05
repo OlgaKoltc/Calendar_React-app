@@ -25,10 +25,9 @@ export default function Week() {
 
   return (
     <GridWrapper>
-      {fullWeek.map((_, index) => (
+      {fullWeek.map(() => (
         <div>
           <Day />
-          {index}
         </div>
       ))}
     </GridWrapper>
