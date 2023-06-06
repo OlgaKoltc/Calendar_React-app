@@ -7,7 +7,11 @@ const GridWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-row: repeat(24, 1fr);
-  background: "rgb(242, 236, 236)";
+  grid-gap: 1px;
+  background: rgb(227 231 239);
+`;
+const DayOfWeek = styled.div`
+  display: grid;
 `;
 
 export default function Week() {
@@ -25,10 +29,9 @@ export default function Week() {
 
   return (
     <GridWrapper>
+      <DayOfWeek startDay={startDay}></DayOfWeek>
       {fullWeek.map(() => (
-        <div>
-          <Day />
-        </div>
+        <Day />
       ))}
     </GridWrapper>
   );

@@ -10,7 +10,7 @@ const Title = styled.h1`
 `;
 const Wrapper = styled.section`
   padding: 2em;
-  background: papayawhip;
+  background:  rgb(227 231 239);
 `;
 
 function App() {

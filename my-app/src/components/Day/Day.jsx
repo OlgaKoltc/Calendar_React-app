@@ -3,18 +3,26 @@ import moment from "moment";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  background: papayawhip;
-  // display: grid;
-  // grid-template-row: repeat(24, 1fr);
+  display: grid;
+  grid-gap: 1px;
 `;
 
-export default function Day() {
+const CellWrapper = styled.div`
+  display: flex;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+`;
+
+export default function Day({ startDay }) {
   const hours = [...Array(24)];
 
   return (
     <Wrapper>
       {hours.map((_, index) => (
-        <div>{index}</div>
+        <CellWrapper>{index}</CellWrapper>
       ))}
     </Wrapper>
   );
