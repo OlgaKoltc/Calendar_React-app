@@ -21,12 +21,19 @@ const SubtitleWrapper = styled.div`
 `;
 const SubtitleWeek = styled.div`
   display: grid;
+  grid-template-columns: repeat(7, 1fr);
 `;
 const SubtitleMonth = styled.div`
   display: grid;
 `;
+const DateOfWeek = styled.div`
+  display: flex;
+`;
 const DayOfWeek = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default function Week() {
@@ -36,7 +43,7 @@ export default function Week() {
   const endDay = moment().endOf("W").endOf("D");
   const fullWeek = [].map(() => day.add(1, "day").clone());
   const day = startDay.clone();
-  console.log(day.format("dd"));
+
   while (!day.isAfter(endDay)) {
     fullWeek.push(day.clone());
     day.add(1, "day");
@@ -48,14 +55,14 @@ export default function Week() {
         <SubtitleWeek>
           {fullWeek.map((dayItem) => (
             <DayOfWeek key={dayItem.format("DDMMYYYY")}>
-              {dayItem.format("dd D")}
+              {dayItem.format("dd")}
+              <DateOfWeek>{dayItem.format("D")}</DateOfWeek>
             </DayOfWeek>
           ))}
         </SubtitleWeek>
         <SubtitleMonth></SubtitleMonth>
       </SubtitleWrapper>
       <GridWrapper>
-        {/* <DayOfWeek startDay={startDay}></DayOfWeek> */}
         {fullWeek.map(() => (
           <Day />
         ))}
