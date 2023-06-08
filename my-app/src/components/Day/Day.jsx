@@ -22,7 +22,7 @@ export default function Day({ startDay }) {
   return (
     <Wrapper>
       {hours.map((_, index) => (
-        <CellWrapper>{index}</CellWrapper>
+        <CellWrapper key={index}>{index}</CellWrapper>
       ))}
     </Wrapper>
   );
